@@ -5,7 +5,9 @@
 	--sl-color-accent-low: #1a2b1a;
 	--sl-color-accent: #2bbc8a;
 	--sl-color-accent-high: #cdffb8;
-	--sl-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	--sl-font:
+		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+		monospace;
 	--sl-font-system-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 

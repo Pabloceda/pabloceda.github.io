@@ -2,8 +2,9 @@
 	"name": "astro-portfolio",
 	"type": "module",
 	"version": "7.0.0",
+	"packageManager": "pnpm@11.5.0",
 	"scripts": {
-		"postinstall": "npm rebuild sharp --force",
+		"postinstall": "pnpm rebuild sharp",
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
@@ -59,17 +60,6 @@
 		"prettier-plugin-tailwindcss": "^0.7.2",
 		"reading-time": "^1.5.0",
 		"typescript": "^5.9.3"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"@biomejs/biome",
-			"@tailwindcss/oxide",
-			"esbuild",
-			"sharp"
-		],
-		"overrides": {
-			"sharp": "^0.34.5"
-		}
 	},
 	"overrides": {
 		"sharp": "^0.34.5"
