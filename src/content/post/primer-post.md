@@ -16,4 +16,4 @@ A continuación, un bloque de código para ver cómo la integración de `express
 npm create astro@latest mi-portfolio -- --template chrismwilliams/astro-theme-cactus
 ```
 
-Y aquí tenemos un enlace directo a la [Documentación del desarrollo de este sitio](/guias/desarrollo-portfolio/) que acabamos de crear en Starlight.
+Y aquí tenemos un enlace directo a la [Documentación del desarrollo de este sitio](/proyectos/desarrollo-portfolio/) que acabamos de crear en Starlight.

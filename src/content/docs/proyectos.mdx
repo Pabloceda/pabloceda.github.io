@@ -1,0 +1,46 @@
+---
+title: Hub de Documentación
+description: Repositorio central de mi documentación técnica, laboratorios y trabajos prácticos de ASIR.
+template: splash
+hero:
+  title: Hub de Documentación
+  tagline: Toda mi documentación técnica, laboratorios de ciberseguridad, infraestructuras de red y proyectos en un solo lugar.
+  actions:
+    - text: Empezar
+      link: /introduccion/introduccion/
+      icon: right-arrow
+      variant: primary
+    - text: Volver al Inicio
+      link: /
+      icon: left-arrow
+      variant: minimal
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <LinkCard 
+    title="Introducción" 
+    href="/introduccion/introduccion/" 
+    description="Bienvenida, objetivos y organización de esta wiki de documentación técnica." 
+    icon="open-book" 
+  />
+  <LinkCard 
+    title="Proyecto Intermodular (TFG)" 
+    href="/proyectos/tfg-fortificacion-pyme/" 
+    description="Diseño e implementación de un marco de seguridad fortificado para una PYME." 
+    icon="rocket" 
+  />
+  <LinkCard 
+    title="Laboratorios y Homelabs" 
+    href="/laboratorios/pfsense-wazuh/" 
+    description="Configuración de cortafuegos pfSense, monitorización con Wazuh SIEM y contenedores Docker." 
+    icon="setting" 
+  />
+  <LinkCard 
+    title="Otros Proyectos (Portfolio)" 
+    href="/proyectos/desarrollo-portfolio/" 
+    description="Manuales prácticos detallados del desarrollo, despliegue y tecnologías de este sitio." 
+    icon="document" 
+  />
+</CardGrid>

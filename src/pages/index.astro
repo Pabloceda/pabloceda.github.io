@@ -125,81 +125,156 @@ import LandingLayout from "@/layouts/Landing.astro";
 		<h2 class="title mb-8 text-xl reveal">Sobre mí</h2>
 		<div class="prose prose-sm prose-cactus max-w-none reveal" style="transition-delay: 150ms;">
 			<p>
-				Estudiante de 2º curso del CFGS en <strong>Administración de Sistemas Informáticos
-				en Red (ASIR)</strong>. Me apasiona la administración de sistemas, las redes y la
-				ciberseguridad.
+				¡Hola! Soy Pablo, Graduado en Administración de Sistemas Informáticos en Red (ASIR). Durante mi
+				formación y prácticas en empresas, he adquirido una sólida experiencia práctica en la administración de sistemas, configuración de redes corporativas y ciberseguridad.
 			</p>
-			<p>Durante mi formación he trabajado con:</p>
+			<p>
+				Me apasiona el campo de la ciberseguridad, el bastionado de sistemas y el diseño de infraestructuras seguras. Fuera del ámbito académico y profesional, dedico mi tiempo libre a investigar vulnerabilidades, realizar laboratorios prácticos en entornos controlados y administrar mis propios servicios en un entorno auto-albergado (homelab).
+			</p>
+			<p>Durante mi trayectoria he trabajado con:</p>
 			<div class="mt-4 grid gap-3 sm:grid-cols-2">
 				<!-- Tarjeta 1 -->
 				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 200ms;">
 					<p class="text-accent mb-1 text-xs font-semibold uppercase">Redes & Seguridad</p>
-					<p class="text-muted text-xs">pfSense · VLANs · NAT · Wazuh SIEM</p>
+					<p class="text-muted text-xs">pfSense · VLANs · NAT · Wazuh SIEM · VPNs (IPsec/OpenVPN)</p>
 				</div>
 				<!-- Tarjeta 2 -->
 				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 300ms;">
-					<p class="text-accent mb-1 text-xs font-semibold uppercase">Contenedores & Servers</p>
-					<p class="text-muted text-xs">Docker · Docker Compose · Ubuntu Server</p>
+					<p class="text-accent mb-1 text-xs font-semibold uppercase">Contenedores & Servidores</p>
+					<p class="text-muted text-xs">Docker · Docker Compose · Ubuntu Server · Podman · OpenShift</p>
 				</div>
 				<!-- Tarjeta 3 -->
 				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 400ms;">
 					<p class="text-accent mb-1 text-xs font-semibold uppercase">Virtualización</p>
-					<p class="text-muted text-xs">VirtualBox · VMware</p>
+					<p class="text-muted text-xs">VirtualBox · VMware · Proxmox VE</p>
 				</div>
 				<!-- Tarjeta 4 -->
 				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 500ms;">
-					<p class="text-accent mb-1 text-xs font-semibold uppercase">Documentación & Web</p>
-					<p class="text-muted text-xs">LaTeX · Markdown · Astro · Git</p>
+					<p class="text-accent mb-1 text-xs font-semibold uppercase">Documentación & Dev</p>
+					<p class="text-muted text-xs">LaTeX · Markdown · Astro · Git · Bash Scripting</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- ═══════════════════════════════════════════════ -->
-	<!-- PROYECTOS                                      -->
+	<!-- PROYECTOS DESTACADOS                            -->
 	<!-- ═══════════════════════════════════════════════ -->
 	<section class="mx-auto max-w-3xl scroll-mt-32 px-4 py-24 sm:px-8" id="proyectos">
-		<h2 class="title mb-4 text-xl reveal">Proyectos</h2>
+		<h2 class="title mb-4 text-xl reveal">Proyectos Destacados</h2>
 		<p class="text-muted mb-10 text-sm reveal" style="transition-delay: 150ms;">
-			Proyectos realizados durante el CFGS de ASIR. Algunos incluyen documentación técnica
-			detallada.
+			Una selección de mis proyectos e implementaciones de sistemas más destacadas, con su respectiva documentación técnica detallada en Starlight.
 		</p>
 
 		<div class="space-y-6">
-			<!-- Proyecto: Portfolio -->
+			<!-- Proyecto: TFG -->
 			<article
 				class="glow-card reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)] cursor-pointer"
-				onclick="window.location.href='/guias/desarrollo-portfolio/'"
+				onclick="window.location.href='/proyectos/tfg-fortificacion-pyme/'"
+				data-cursor="-pointer"
+				style="transition-delay: 200ms;"
+			>
+				<div class="glow-pointer pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+				<div class="relative z-10">
+					<div class="mb-2 flex flex-wrap items-center gap-2">
+						<h3 class="text-base font-semibold">
+							<a class="cactus-link" href="/proyectos/tfg-fortificacion-pyme/">
+								🛡️ Fortificación de Servidores y Redes (TFG)
+							</a>
+						</h3>
+						<span class="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
+							Completado
+						</span>
+					</div>
+					<p class="text-muted mb-3 text-sm">
+						Diseño e implementación de una infraestructura de red corporativa fortificada utilizando pfSense, segmentación avanzada de VLANs, túneles VPN y auditorías de bastionado.
+					</p>
+					<div class="flex flex-wrap gap-1.5">
+						{["pfSense", "VLANs", "Hardening", "Ubuntu Server", "Proxmox"].map((tag) => (
+							<span class="bg-accent/10 text-accent rounded-md px-2 py-0.5 text-xs">{tag}</span>
+						))}
+					</div>
+				</div>
+			</article>
+
+			<!-- Proyecto: pfSense + Wazuh -->
+			<article
+				class="glow-card reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)] cursor-pointer"
+				onclick="window.location.href='/laboratorios/pfsense-wazuh/'"
 				data-cursor="-pointer"
 				style="transition-delay: 300ms;"
 			>
 				<div class="glow-pointer pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 				<div class="relative z-10">
 					<div class="mb-2 flex flex-wrap items-center gap-2">
-					<h3 class="text-base font-semibold">
-						<a class="cactus-link" href="/guias/desarrollo-portfolio/">
-							🌐 Portfolio Personal
-						</a>
-					</h3>
-					<span class="rounded-full bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-500">
-						En desarrollo
-					</span>
-				</div>
-				<p class="text-muted mb-3 text-sm">
-					Este sitio web. Construido con Astro (Cactus + Starlight), desplegado en GitHub Pages.
-				</p>
-				<div class="flex flex-wrap gap-1.5">
-					{["Astro", "Starlight", "Tailwind CSS", "GitHub Pages"].map((tag) => (
-						<span class="bg-accent/10 text-accent rounded-md px-2 py-0.5 text-xs">{tag}</span>
-					))}
-				</div>
+						<h3 class="text-base font-semibold">
+							<a class="cactus-link" href="/laboratorios/pfsense-wazuh/">
+								🔒 Seguridad Perimetral y SIEM
+							</a>
+						</h3>
+						<span class="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
+							Completado
+						</span>
+					</div>
+					<p class="text-muted mb-3 text-sm">
+						Integración de un firewall pfSense con la plataforma SIEM Wazuh para recolectar logs de tráfico y monitorizar de manera activa servidores en la DMZ.
+					</p>
+					<div class="flex flex-wrap gap-1.5">
+						{["Wazuh SIEM", "pfSense", "DMZ", "Docker Compose", "Log Monitoring"].map((tag) => (
+							<span class="bg-accent/10 text-accent rounded-md px-2 py-0.5 text-xs">{tag}</span>
+						))}
+					</div>
 				</div>
 			</article>
 
-			<!-- Placeholder para futuros proyectos -->
-			<div class="reveal border-muted/20 text-muted rounded-md border border-dashed p-5 text-center text-sm" style="transition-delay: 400ms;">
-				Más proyectos próximamente...
-			</div>
+			<!-- Proyecto: Portfolio -->
+			<article
+				class="glow-card reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)] cursor-pointer"
+				onclick="window.location.href='/proyectos/desarrollo-portfolio/'"
+				data-cursor="-pointer"
+				style="transition-delay: 400ms;"
+			>
+				<div class="glow-pointer pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+				<div class="relative z-10">
+					<div class="mb-2 flex flex-wrap items-center gap-2">
+						<h3 class="text-base font-semibold">
+							<a class="cactus-link" href="/proyectos/desarrollo-portfolio/">
+								🌐 Portfolio Personal & Wiki
+							</a>
+						</h3>
+						<span class="rounded-full bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-500">
+							En desarrollo
+						</span>
+					</div>
+					<p class="text-muted mb-3 text-sm">
+						Construcción de este sitio web dinámico que integra un portfolio moderno y una Wiki técnica autogestionada mediante Starlight.
+					</p>
+					<div class="flex flex-wrap gap-1.5">
+						{["Astro", "Starlight", "Tailwind CSS", "GitHub Pages"].map((tag) => (
+							<span class="bg-accent/10 text-accent rounded-md px-2 py-0.5 text-xs">{tag}</span>
+						))}
+					</div>
+				</div>
+			</article>
+		</div>
+
+		<!-- Botón CTA para ver todo en Starlight -->
+		<div class="reveal flex justify-center pt-10" style="transition-delay: 500ms;">
+			<a
+				class="border-accent text-accent hover:bg-accent/10 flex items-center gap-2 rounded-md border px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 shadow-[0_4px_12px_rgba(42,188,137,0.05)] group"
+				href="/proyectos/"
+			>
+				🚀 Explorar todo el Hub de Proyectos
+				<svg
+					class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.5"
+					viewBox="0 0 24 24"
+				>
+					<path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</a>
 		</div>
 	</section>
 

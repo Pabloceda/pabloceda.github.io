@@ -40,8 +40,20 @@ export default defineConfig({
 					link: "/",
 				},
 				{
-					label: "Guías Técnicas",
-					items: [{ autogenerate: { directory: "guias" } }],
+					label: "Hub de Documentación",
+					link: "/proyectos/",
+				},
+				{
+					label: "Comienza Aquí",
+					items: [{ autogenerate: { directory: "Introduccion" } }],
+				},
+				{
+					label: "Proyectos",
+					items: [{ autogenerate: { directory: "proyectos" } }],
+				},
+				{
+					label: "Laboratorios",
+					items: [{ autogenerate: { directory: "laboratorios" } }],
 				},
 			],
 			customCss: ["./src/styles/starlight-custom.css"],
