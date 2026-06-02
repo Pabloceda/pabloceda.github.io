@@ -136,12 +136,12 @@ import LandingLayout from "@/layouts/Landing.astro";
 				<!-- Tarjeta 1 -->
 				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 200ms;">
 					<p class="text-accent mb-1 text-xs font-semibold uppercase">Redes & Seguridad</p>
-					<p class="text-muted text-xs">pfSense · VLANs · NAT · Wazuh SIEM · VPNs (IPsec/OpenVPN)</p>
+					<p class="text-muted text-xs">pfSense · VLANs · NAT · Wazuh · VPNs (IPsec/OpenVPN)</p>
 				</div>
 				<!-- Tarjeta 2 -->
 				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 300ms;">
 					<p class="text-accent mb-1 text-xs font-semibold uppercase">Contenedores & Servidores</p>
-					<p class="text-muted text-xs">Docker · Docker Compose · Ubuntu Server · Podman · OpenShift</p>
+					<p class="text-muted text-xs">Docker · Ubuntu Server · Podman · OpenShift</p>
 				</div>
 				<!-- Tarjeta 3 -->
 				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 400ms;">
@@ -179,7 +179,7 @@ import LandingLayout from "@/layouts/Landing.astro";
 					<div class="mb-2 flex flex-wrap items-center gap-2">
 						<h3 class="text-base font-semibold">
 							<a class="cactus-link" href="/proyectos/tfg-fortificacion-pyme/">
-								🛡️ Fortificación de Servidores y Redes (TFG)
+								Marco de Seguridad para PYMES
 							</a>
 						</h3>
 						<span class="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
@@ -187,10 +187,10 @@ import LandingLayout from "@/layouts/Landing.astro";
 						</span>
 					</div>
 					<p class="text-muted mb-3 text-sm">
-						Diseño e implementación de una infraestructura de red corporativa fortificada utilizando pfSense, segmentación avanzada de VLANs, túneles VPN y auditorías de bastionado.
+						Diseño e implementación de una infraestructura de red corporativa segura utilizando pfSense, segmentación de VLAN, configuración de reglas Firewall y monitorización con Wazuh.
 					</p>
 					<div class="flex flex-wrap gap-1.5">
-						{["pfSense", "VLANs", "Hardening", "Ubuntu Server", "Proxmox"].map((tag) => (
+						{["pfSense", "VLANs", "Firewall", "Wazuh"].map((tag) => (
 							<span class="bg-accent/10 text-accent rounded-md px-2 py-0.5 text-xs">{tag}</span>
 						))}
 					</div>
@@ -209,7 +209,7 @@ import LandingLayout from "@/layouts/Landing.astro";
 					<div class="mb-2 flex flex-wrap items-center gap-2">
 						<h3 class="text-base font-semibold">
 							<a class="cactus-link" href="/laboratorios/pfsense-wazuh/">
-								🔒 Seguridad Perimetral y SIEM
+								Entorno de laboratorio del Proyecto Intermodular
 							</a>
 						</h3>
 						<span class="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
@@ -217,7 +217,7 @@ import LandingLayout from "@/layouts/Landing.astro";
 						</span>
 					</div>
 					<p class="text-muted mb-3 text-sm">
-						Integración de un firewall pfSense con la plataforma SIEM Wazuh para recolectar logs de tráfico y monitorizar de manera activa servidores en la DMZ.
+						Integración de un firewall pfSense con la plataforma SIEM Wazuh para recolectar logs de tráfico y monitorizar de manera activa servidores en la DMZ y equipos cliente en la red LAN.
 					</p>
 					<div class="flex flex-wrap gap-1.5">
 						{["Wazuh SIEM", "pfSense", "DMZ", "Docker Compose", "Log Monitoring"].map((tag) => (
@@ -239,7 +239,7 @@ import LandingLayout from "@/layouts/Landing.astro";
 					<div class="mb-2 flex flex-wrap items-center gap-2">
 						<h3 class="text-base font-semibold">
 							<a class="cactus-link" href="/proyectos/desarrollo-portfolio/">
-								🌐 Portfolio Personal & Wiki
+								Sitio Web Personal
 							</a>
 						</h3>
 						<span class="rounded-full bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-500">
@@ -247,7 +247,7 @@ import LandingLayout from "@/layouts/Landing.astro";
 						</span>
 					</div>
 					<p class="text-muted mb-3 text-sm">
-						Construcción de este sitio web dinámico que integra un portfolio moderno y una Wiki técnica autogestionada mediante Starlight.
+						Construcción de este sitio web con Astro que integra un portfolio personal, un blog y documentación propia mediante Starlight.
 					</p>
 					<div class="flex flex-wrap gap-1.5">
 						{["Astro", "Starlight", "Tailwind CSS", "GitHub Pages"].map((tag) => (
@@ -264,7 +264,7 @@ import LandingLayout from "@/layouts/Landing.astro";
 				class="border-accent text-accent hover:bg-accent/10 flex items-center gap-2 rounded-md border px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 shadow-[0_4px_12px_rgba(42,188,137,0.05)] group"
 				href="/proyectos/"
 			>
-				🚀 Explorar todo el Hub de Proyectos
+				Explorar todos mis Proyectos
 				<svg
 					class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
 					fill="none"
@@ -284,7 +284,7 @@ import LandingLayout from "@/layouts/Landing.astro";
 	<section class="mx-auto max-w-3xl scroll-mt-32 px-4 py-24 sm:px-8" id="contacto">
 		<h2 class="title mb-6 text-xl">Contacto</h2>
 		<p class="text-muted mb-6 text-sm">
-			¿Quieres saber más o colaborar? Encuéntrame en:
+			¿Quieres saber más o proponerte en contacto? Puedes hacerlo a través de mis redes sociales:
 		</p>
 		<SocialList />
 	</section>
