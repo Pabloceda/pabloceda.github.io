@@ -12,7 +12,7 @@ Este es el repositorio oficial de mi portfolio profesional, desarrollado con **A
 
 🌐 **URL del Sitio:** [https://pabloceda.github.io/](https://pabloceda.github.io/)
 
-## 🚀 Tecnologías Principales
+## Tecnologías Principales
 
 - **Astro:** Framework hiper-optimizado y rápido para sitios estáticos.
 - **Starlight:** Motor de documentación oficial de Astro para la base de conocimientos y guías técnicas.
@@ -23,7 +23,7 @@ Este es el repositorio oficial de mi portfolio profesional, desarrollado con **A
   - Efectos tipográficos como *Typewriter* y parpadeos asíncronos.
 - **Despliegue Automático (CI/CD):** Configurado mediante GitHub Actions para publicación continua en GitHub Pages.
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 - `/src/pages/`: Páginas principales del portfolio (Landing page, Blog, etc).
 - `/src/content/docs/`: Documentación y manuales gestionados por Starlight.
