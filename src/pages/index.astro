@@ -1,7 +1,41 @@
 ---
+import { Icon } from "astro-icon/components";
 import Meteors from "@/components/Meteors.astro";
 import SocialList from "@/components/SocialList.astro";
 import LandingLayout from "@/layouts/Landing.astro";
+
+interface SkillItem {
+	name: string;
+	icon: string;
+	color?: string;
+	delay: string;
+	duration: string;
+}
+
+const skills: SkillItem[] = [
+	{ name: "pfSense", icon: "simple-icons:pfsense", color: "#ffffff", delay: "0s", duration: "4s" },
+	{ name: "Wazuh SIEM", icon: "wazuh", delay: "1.2s", duration: "4.8s" },
+	{ name: "Docker", icon: "simple-icons:docker", delay: "0.5s", duration: "5.2s" },
+	{ name: "Kali Linux", icon: "kali-linux", delay: "1.7s", duration: "4.6s" },
+	{ name: "Bash Scripting", icon: "simple-icons:gnubash", delay: "0.3s", duration: "5s" },
+	{ name: "PowerShell Scripting", icon: "powershell", delay: "0.3s", duration: "5s" },
+	{ name: "Git", icon: "simple-icons:git", delay: "2.5s", duration: "4.2s" },
+	{ name: "GitHub", icon: "simple-icons:github", delay: "1.1s", duration: "5.4s" },
+	{ name: "Astro", icon: "simple-icons:astro", delay: "1.9s", duration: "4.7s" },
+	{ name: "Markdown", icon: "simple-icons:markdown", color: "#ffffff", delay: "0.6s", duration: "5.1s" },
+	{ name: "LaTeX", icon: "simple-icons:latex", delay: "1.4s", duration: "4.9s" },
+	{ name: "Python", icon: "simple-icons:python", delay: "1.4s", duration: "4.9s" },
+	{ name: "TrueNAS", icon: "simple-icons:truenas", delay: "1.4s", duration: "4.9s" },
+	{ name: "Cisco Packet Tracer", icon: "cisco", delay: "1.4s", duration: "4.9s" },
+];
+
+const tools: SkillItem[] = [
+	{ name: "Antigravity", icon: "antigravity-color", delay: "0.2s", duration: "4.5s" },
+	{ name: "VirtualBox", icon: "simple-icons:virtualbox", delay: "1.5s", duration: "5.3s" },
+	{ name: "Ubuntu Server", icon: "simple-icons:ubuntu", delay: "0.9s", duration: "4.7s" },
+	{ name: "Windows Server", icon: "windows-1", delay: "2.3s", duration: "5.1s" },
+	{ name: "Git CLI", icon: "simple-icons:git", delay: "1.8s", duration: "4.3s" },
+];
 ---
 
 <LandingLayout meta={{ title: "Portfolio" }}>
@@ -16,13 +50,13 @@ import LandingLayout from "@/layouts/Landing.astro";
 		<Meteors number={30} />
 
 		<div class="relative z-10 max-w-2xl">
-			<!-- Subtítulo con efecto de parpadeo escalonado y hover -->
-			<p class="text-accent mb-3 text-sm font-semibold uppercase tracking-widest cursor-default group">
-				<span class="inline-block animate-pulse hover:text-link hover:scale-105 transition-all">Administración de Sistemas</span>
-				<span class="mx-1 opacity-50">·</span>
-				<span class="inline-block animate-pulse hover:text-link hover:scale-105 transition-all" style="animation-delay: 0.3s">Redes</span>
-				<span class="mx-1 opacity-50">·</span>
-				<span class="inline-block animate-pulse hover:text-link hover:scale-105 transition-all" style="animation-delay: 0.6s">Seguridad</span>
+			<!-- Subtítulo con entrada escalonada y hover interactivo -->
+			<p class="text-accent mb-3 text-sm font-semibold uppercase tracking-widest cursor-default group hero-subtitle">
+				<span class="inline-block hover:text-link hover:scale-105 transition-all opacity-0 translate-y-4">Administración de Sistemas</span>
+				<span class="mx-1 opacity-0">·</span>
+				<span class="inline-block hover:text-link hover:scale-105 transition-all opacity-0 translate-y-4">Redes</span>
+				<span class="mx-1 opacity-0">·</span>
+				<span class="inline-block hover:text-link hover:scale-105 transition-all opacity-0 translate-y-4">Seguridad</span>
 			</p>
 			
 			<!-- Título con efecto de máquina de escribir y hover resplandeciente -->
@@ -36,6 +70,18 @@ import LandingLayout from "@/layouts/Landing.astro";
 				Técnico en ASIR. Construyo y documento infraestructuras de red seguras, despliegues
 				con Docker y sistemas de monitorización.
 			</p>
+
+			<!-- Botonera CTA Principal -->
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 hero-cta">
+				<a href="/proyectos/" class="opacity-0 translate-y-4 bg-accent text-[#1d1f21] hover:brightness-110 px-6 py-3 rounded-md font-bold transition-all hover:scale-105 flex items-center gap-2 shadow-[0_0_15px_rgba(42,188,137,0.3)] hover:shadow-[0_0_20px_rgba(42,188,137,0.5)]">
+					<Icon name="mdi:book-open-page-variant" class="h-5 w-5" />
+					Explorar Mi Wiki
+				</a>
+				<a href="#contacto" class="opacity-0 translate-y-4 border border-accent/30 text-accent hover:bg-accent/10 px-6 py-3 rounded-md font-semibold transition-colors">
+					Contactar
+				</a>
+			</div>
+
 			<SocialList />
 		</div>
 
@@ -123,36 +169,208 @@ import LandingLayout from "@/layouts/Landing.astro";
 	<!-- ═══════════════════════════════════════════════ -->
 	<section class="mx-auto max-w-3xl scroll-mt-32 px-4 py-24 sm:px-8" id="sobre-mi">
 		<h2 class="title mb-8 text-xl reveal">Sobre mí</h2>
-		<div class="prose prose-sm prose-cactus max-w-none reveal" style="transition-delay: 150ms;">
-			<p>
-				¡Hola! Soy Pablo, Graduado en Administración de Sistemas Informáticos en Red (ASIR). Durante mi
-				formación y prácticas en empresas, he adquirido una sólida experiencia práctica en la administración de sistemas, configuración de redes corporativas y ciberseguridad.
-			</p>
-			<p>
-				Me apasiona el campo de la ciberseguridad, el bastionado de sistemas y el diseño de infraestructuras seguras. Fuera del ámbito académico y profesional, dedico mi tiempo libre a investigar vulnerabilidades, realizar laboratorios prácticos en entornos controlados y administrar mis propios servicios en un entorno auto-albergado (homelab).
-			</p>
-			<p>Durante mi trayectoria he trabajado con:</p>
-			<div class="mt-4 grid gap-3 sm:grid-cols-2">
-				<!-- Tarjeta 1 -->
-				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 200ms;">
-					<p class="text-accent mb-1 text-xs font-semibold uppercase">Redes & Seguridad</p>
-					<p class="text-muted text-xs">pfSense · VLANs · NAT · Wazuh · VPNs (IPsec/OpenVPN)</p>
+		
+		<!-- Header de Impacto -->
+		<div class="reveal mb-12">
+			<h3 class="text-2xl md:text-3xl font-bold text-accent-2 leading-tight">
+				Administrador de Sistemas enfocado en el despliegue de infraestructuras seguras, automatización y defensa perimetral.
+			</h3>
+		</div>
+
+		<!-- Layout de 2 Columnas -->
+		<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+			
+			<!-- Columna Izquierda: Historia Profesional (60-70%) -->
+			<div class="md:col-span-7 lg:col-span-8 flex flex-col gap-6 reveal">
+				<div class="prose prose-sm md:prose-base prose-cactus max-w-none text-muted leading-relaxed">
+					<p>
+						¡Hola! <strong>Soy Pablo, Graduado en Administración de Sistemas Informáticos en Red (ASIR).</strong> Desde mis inicios, siempre me ha apasionado comprender cómo fluyen los datos y cómo construir cimientos tecnológicos sólidos. Cuento con experiencia práctica administrando sistemas y asegurando la continuidad del negocio.
+					</p>
+					<p>
+						Me especializo en diseñar entornos de red segmentados mediante VLANs, implementar cortafuegos perimetrales con pfSense y fortificar servidores mediante la monitorización y análisis de eventos con Wazuh. Además, disfruto orquestando despliegues ágiles utilizando contenedores Docker.
+					</p>
+					<p>
+						Actualmente sigo ampliando mis conocimientos: me encuentro preparándome activamente para certificaciones clave de la industria como <strong>Cisco CCNA</strong> y <strong>CompTIA Security+</strong>. Mi gran objetivo es consolidar mi carrera como analista e ingeniero de Ciberseguridad.
+					</p>
 				</div>
-				<!-- Tarjeta 2 -->
-				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 300ms;">
-					<p class="text-accent mb-1 text-xs font-semibold uppercase">Contenedores & Servidores</p>
-					<p class="text-muted text-xs">Docker · Ubuntu Server · Podman · OpenShift</p>
+				
+				<!-- Soft Skills minimalistas (Opcional, pero útil) -->
+				<div class="flex flex-wrap gap-3 mt-2">
+					<span class="inline-flex items-center gap-1.5 rounded bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent-2 border border-accent/20">Trabajo en equipo</span>
+					<span class="inline-flex items-center gap-1.5 rounded bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent-2 border border-accent/20">Resiliencia</span>
+					<span class="inline-flex items-center gap-1.5 rounded bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent-2 border border-accent/20">Resolución de problemas</span>
 				</div>
-				<!-- Tarjeta 3 -->
-				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 400ms;">
-					<p class="text-accent mb-1 text-xs font-semibold uppercase">Virtualización</p>
-					<p class="text-muted text-xs">VirtualBox · VMware · Proxmox VE</p>
+			</div>
+
+			<!-- Columna Derecha: Elemento Visual de Conversión (30-40%) -->
+			<div class="md:col-span-5 lg:col-span-4 reveal relative">
+				<div 
+					class="relative overflow-hidden border border-accent/20 hover:border-accent group rounded-xl bg-accent/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full min-h-[280px]"
+				>
+					<!-- Terminal Header -->
+					<div class="flex items-center gap-2 px-4 py-3 bg-black/40 border-b border-accent/10">
+						<div class="flex gap-1.5">
+							<div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+							<div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+							<div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+						</div>
+						<div class="mx-auto text-[10px] font-mono text-muted">pablo@portfolio:~</div>
+					</div>
+					<!-- Terminal Body -->
+					<div class="p-5 font-mono text-xs flex-grow flex flex-col justify-center relative z-20">
+						<div class="text-accent-2 mb-2"><span class="text-emerald-400">pablo@portfolio</span>:<span class="text-blue-400">~</span>$ whoami</div>
+						<div class="text-muted mb-6 pl-2 opacity-80 group-hover:opacity-100 transition-opacity space-y-1">
+							<div>> SysAdmin</div>
+							<div>> Técnico de Redes</div>
+							<div>> Ciberseguridad</div>
+						</div>
+						
+						<a href="/cv_pablo_calderon.pdf" target="_blank" rel="noopener noreferrer" class="shimmer-btn mt-auto pointer-events-auto bg-accent/10 hover:bg-accent/20 text-accent border border-accent/20 rounded-md px-4 py-2.5 text-xs font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02]">
+							<Icon name="mdi:download" class="h-4 w-4" />
+							Descargar Currículum
+						</a>
+					</div>
+					<!-- Decorative Background Matrix/Lines -->
+					<div class="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(42,188,137,0.2)_1px,transparent_1px)] bg-[length:100%_4px] pointer-events-none"></div>
 				</div>
-				<!-- Tarjeta 4 -->
-				<div class="reveal border-accent/20 hover:border-accent rounded-md border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)]" data-cursor="-pointer" style="transition-delay: 500ms;">
-					<p class="text-accent mb-1 text-xs font-semibold uppercase">Documentación & Dev</p>
-					<p class="text-muted text-xs">LaTeX · Markdown · Astro · Git · Bash Scripting</p>
+			</div>
+		</div>
+
+		<!-- Línea de tiempo de Formación (Roadmap) -->
+		<div class="relative overflow-hidden mt-8 border border-accent/20 hover:border-accent group rounded-xl p-6 md:p-8 bg-accent/5 backdrop-blur-sm mb-16 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+			
+			<h3 class="relative z-10 text-sm font-bold text-accent uppercase tracking-widest mb-8 flex items-center gap-2">
+				<Icon name="mdi:map-marker-path" class="h-5 w-5" />
+				Formación & Ruta Profesional
+			</h3>
+			
+			<div class="relative z-10 border-l-2 border-accent/20 ml-3 md:ml-4 space-y-8">
+				
+				<!-- Hito 1: ASIR -->
+				<div class="relative pl-6 md:pl-8 reveal">
+					<div class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-emerald-400 ring-4 ring-[#1d1f21] shadow-[0_0_10px_rgba(42,188,137,0.8)]"></div>
+					<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+						<h4 class="text-base font-semibold text-accent-2">Técnico Superior en ASIR</h4>
+						<span class="inline-flex items-center w-max px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">
+							Completado
+						</span>
+					</div>
+					<p class="text-sm text-muted">Administración de Sistemas Informáticos en Red. Base sólida en sistemas operativos, servicios de red y seguridad estructural.</p>
 				</div>
+
+				<!-- Hito 2: B2 -->
+				<div class="relative pl-6 md:pl-8 reveal">
+					<div class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-emerald-400 ring-4 ring-[#1d1f21] shadow-[0_0_10px_rgba(42,188,137,0.8)]"></div>
+					<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+						<h4 class="text-base font-semibold text-accent-2">B2 Cambridge English</h4>
+						<span class="inline-flex items-center w-max px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">
+							Completado
+						</span>
+					</div>
+					<p class="text-sm text-muted">Certificación de nivel intermedio-alto de inglés, vital para la lectura y comprensión de documentación técnica.</p>
+				</div>
+
+				<!-- Hito 3: Cisco / CompTIA -->
+				<div class="relative pl-6 md:pl-8 reveal">
+					<div class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-yellow-400 ring-4 ring-[#1d1f21] shadow-[0_0_10px_rgba(250,204,21,0.8)]"></div>
+					<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+						<h4 class="text-base font-semibold text-accent-2">Cisco CCNA & CompTIA Security+</h4>
+						<span class="inline-flex items-center w-max px-2 py-0.5 rounded text-[10px] font-bold bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 uppercase tracking-wider">
+							Estudiando Actual
+						</span>
+					</div>
+					<p class="text-sm text-muted">Preparación activa para la certificación líder en redes (Cisco) y la certificación base en ciberseguridad (CompTIA).</p>
+				</div>
+
+				<!-- Hito 4: Ciberseguridad -->
+				<div class="relative pl-6 md:pl-8 reveal">
+					<div class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-blue-400 ring-4 ring-[#1d1f21] shadow-[0_0_10px_rgba(96,165,250,0.8)]"></div>
+					<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+						<h4 class="text-base font-semibold text-accent-2">Curso Especialización Ciberseguridad</h4>
+						<span class="inline-flex items-center w-max px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 uppercase tracking-wider">
+							Meta Futura
+						</span>
+					</div>
+					<p class="text-sm text-muted">Próximo paso tras consolidar las bases, con enfoque en el hacking ético, análisis forense y seguridad de los entornos de la información.</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- ═══════════════════════════════════════════════ -->
+		<!-- TECNOLOGÍAS & HERRAMIENTAS (Skillset)          -->
+		<!-- ═══════════════════════════════════════════════ -->
+		<div class="mt-20 reveal">
+			<div class="text-center mb-10">
+				<h3 class="text-xl font-bold text-accent-2 mb-2">Tecnologías & Skills</h3>
+				<p class="text-xs text-muted">Algunas de las tecnologías e infraestructuras con las que trabajo</p>
+			</div>
+			
+			<!-- Habilidades flotantes -->
+			<div class="flex flex-wrap items-center justify-center gap-4.5 max-w-2xl mx-auto mb-16">
+				{
+					skills.map((skill) => {
+						const isSimpleIcon = skill.icon.startsWith("simple-icons:");
+						const simpleIconSlug = isSimpleIcon ? skill.icon.replace("simple-icons:", "") : "";
+						const needsInvert = ["github", "latex", "pfsense", "markdown"].includes(simpleIconSlug);
+						
+						return (
+							<div
+								class="floating-pill flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-sm hover:border-accent hover:shadow-[0_0_15px_rgba(42,188,137,0.25)] hover:scale-105 transition-all duration-300 cursor-default"
+								style={`animation-delay: ${skill.delay}; animation-duration: ${skill.duration};`}
+								data-cursor="-pointer"
+							>
+								{isSimpleIcon ? (
+									<img
+										src={`https://cdn.simpleicons.org/${simpleIconSlug}`}
+										class={`h-5.5 w-5.5 object-contain ${needsInvert ? "dark:brightness-0 dark:invert" : ""}`}
+										alt=""
+										onerror="this.onerror=null; this.src='https://api.iconify.design/mdi/code-braces.svg?color=%232bbc8a';"
+									/>
+								) : (
+									<Icon name={skill.icon} class="h-5.5 w-5.5" style={skill.color ? `color: ${skill.color}` : ""} />
+								)}
+								<span class="text-sm font-semibold text-accent-2">{skill.name}</span>
+							</div>
+						);
+					})
+				}
+			</div>
+
+			<div class="text-center mb-10">
+				<h3 class="text-xl font-bold text-accent-2 mb-2">Mi stack tecnológico</h3>
+				<p class="text-xs text-muted">El software y herramientas que utilizo en mi día a día</p>
+			</div>
+
+			<!-- Herramientas flotantes -->
+			<div class="flex flex-wrap items-center justify-center gap-4.5 max-w-2xl mx-auto">
+				{
+					tools.map((tool) => {
+						const isSimpleIcon = tool.icon.startsWith("simple-icons:");
+						const simpleIconSlug = isSimpleIcon ? tool.icon.replace("simple-icons:", "") : "";
+						const needsInvert = ["github", "latex", "pfsense", "markdown"].includes(simpleIconSlug);
+						
+						return (
+							<div
+								class="floating-pill flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-sm hover:border-accent hover:shadow-[0_0_15px_rgba(42,188,137,0.25)] hover:scale-105 transition-all duration-300 cursor-default"
+								style={`animation-delay: ${tool.delay}; animation-duration: ${tool.duration};`}
+								data-cursor="-pointer"
+							>
+								{isSimpleIcon ? (
+									<img
+										src={`https://cdn.simpleicons.org/${simpleIconSlug}`}
+										class={`h-5.5 w-5.5 object-contain ${needsInvert ? "dark:brightness-0 dark:invert" : ""}`}
+										alt=""
+										onerror="this.onerror=null; this.src='https://api.iconify.design/mdi/robot-outline.svg?color=%232bbc8a';"
+									/>
+								) : (
+									<Icon name={tool.icon} class="h-5.5 w-5.5" style={tool.color ? `color: ${tool.color}` : ""} />
+								)}
+								<span class="text-sm font-semibold text-accent-2">{tool.name}</span>
+							</div>
+						);
+					})
+				}
 			</div>
 		</div>
 	</section>
@@ -169,12 +387,11 @@ import LandingLayout from "@/layouts/Landing.astro";
 		<div class="space-y-6">
 			<!-- Proyecto: TFG -->
 			<article
-				class="glow-card reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)] cursor-pointer"
+				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
 				onclick="window.location.href='/proyectos/tfg-fortificacion-pyme/'"
 				data-cursor="-pointer"
 				style="transition-delay: 200ms;"
 			>
-				<div class="glow-pointer pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 				<div class="relative z-10">
 					<div class="mb-2 flex flex-wrap items-center gap-2">
 						<h3 class="text-base font-semibold">
@@ -199,12 +416,11 @@ import LandingLayout from "@/layouts/Landing.astro";
 
 			<!-- Proyecto: pfSense + Wazuh -->
 			<article
-				class="glow-card reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)] cursor-pointer"
+				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
 				onclick="window.location.href='/laboratorios/pfsense-wazuh/'"
 				data-cursor="-pointer"
 				style="transition-delay: 300ms;"
 			>
-				<div class="glow-pointer pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 				<div class="relative z-10">
 					<div class="mb-2 flex flex-wrap items-center gap-2">
 						<h3 class="text-base font-semibold">
@@ -229,12 +445,11 @@ import LandingLayout from "@/layouts/Landing.astro";
 
 			<!-- Proyecto: Portfolio -->
 			<article
-				class="glow-card reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)] cursor-pointer"
+				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
 				onclick="window.location.href='/proyectos/desarrollo-portfolio/'"
 				data-cursor="-pointer"
 				style="transition-delay: 400ms;"
 			>
-				<div class="glow-pointer pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 				<div class="relative z-10">
 					<div class="mb-2 flex flex-wrap items-center gap-2">
 						<h3 class="text-base font-semibold">
@@ -309,16 +524,10 @@ import LandingLayout from "@/layouts/Landing.astro";
 			filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.25));
 		}
 
-		/* Animaciones de revelado (Native Intersection Observer) */
+		/* Animaciones de revelado (GSAP) */
 		.reveal {
 			opacity: 0;
-			transform: translateY(30px);
-			transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
 			will-change: opacity, transform;
-		}
-		.reveal.active {
-			opacity: 1;
-			transform: translateY(0);
 		}
 
 		/* Efecto Glow Dinámico siguiendo el ratón */
@@ -329,45 +538,107 @@ import LandingLayout from "@/layouts/Landing.astro";
 				transparent 40%
 			);
 		}
+
+		/* Animación de flotado para las píldoras de tecnologías usando 'translate' para no pisar el 'transform' del hover */
+		@keyframes float {
+			0%, 100% {
+				translate: 0 0;
+			}
+			50% {
+				translate: 0 -6px;
+			}
+		}
+		.floating-pill {
+			animation: float 4s ease-in-out infinite;
+			will-change: translate;
+		}
+
+		/* Botón con efecto de brillo (shimmer) */
+		.shimmer-btn {
+			position: relative;
+			overflow: hidden;
+		}
+		.shimmer-btn::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 50%;
+			height: 100%;
+			background: linear-gradient(to right, transparent, rgba(42, 188, 137, 0.25), transparent);
+			transform: skewX(-25deg);
+			animation: shimmer 3s infinite;
+		}
+		@keyframes shimmer {
+			0%, 65% { left: -100%; }
+			100% { left: 200%; }
+		}
 	</style>
 
-	<script is:inline>
+	<script>
+		import { gsap } from "gsap";
+		import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+		gsap.registerPlugin(ScrollTrigger);
+
 		const setupInteractions = () => {
-			// 1. Configurar Reveal Animations (Intersection Observer)
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('active');
-					}
-				});
-			}, {
-				threshold: 0.1, // Se dispara cuando el 10% del elemento es visible
-				rootMargin: "0px 0px -50px 0px"
+			// 1. Animación del Hero Subtitle y Botones CTA (Entrada secuencial)
+			gsap.to(".hero-subtitle span, .hero-cta a", {
+				opacity: 1,
+				y: 0,
+				duration: 0.8,
+				stagger: 0.15,
+				ease: "power3.out",
+				delay: 0.2 // Entra nada más cargar la página
 			});
 
-			document.querySelectorAll('.reveal').forEach((el) => {
-				observer.observe(el);
+			// 2. Configurar GSAP ScrollTrigger con Batch para animaciones en cascada (.reveal)
+			ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+			
+			ScrollTrigger.batch(".reveal", {
+				onEnter: elements => {
+					gsap.fromTo(
+						elements,
+						{ opacity: 0, y: 35 },
+						{
+							opacity: 1,
+							y: 0,
+							duration: 0.8,
+							stagger: 0.15,
+							ease: "power2.out",
+							overwrite: true
+						}
+					);
+				},
+				once: true
 			});
 
-			// 2. Configurar Glow Effect en tarjetas de proyectos
+			// 2. Configurar Glow Effect en tarjetas de proyectos y Bento grid
 			const glowCards = document.querySelectorAll('.glow-card');
 			glowCards.forEach((card) => {
-				card.addEventListener('mousemove', (e) => {
+				const handleMouseMove = (e: MouseEvent) => {
 					const rect = card.getBoundingClientRect();
 					const x = e.clientX - rect.left;
 					const y = e.clientY - rect.top;
-					card.style.setProperty('--mouse-x', `${x}px`);
-					card.style.setProperty('--mouse-y', `${y}px`);
-				});
+					(card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+					(card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+				};
+				
+				card.removeEventListener('mousemove', handleMouseMove as any);
+				card.addEventListener('mousemove', handleMouseMove as any);
 			});
 		};
 
-		// Ejecutar interacciones (Compatible con View Transitions)
+		// Ejecutar interacciones (Compatible con View Transitions / Speculation Rules)
 		document.addEventListener('astro:page-load', setupInteractions);
 		if (document.readyState === 'loading') {
 			document.addEventListener('DOMContentLoaded', setupInteractions);
 		} else {
 			setupInteractions();
 		}
+		
+		// Refrescar ScrollTrigger en cambios de redimensión o carga completa de assets
+		window.addEventListener('load', () => ScrollTrigger.refresh());
+		window.addEventListener('resize', () => ScrollTrigger.refresh());
 	</script>
 </LandingLayout>

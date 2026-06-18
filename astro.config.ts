@@ -46,15 +46,22 @@ export default defineConfig({
 				{
 					label: "Comienza Aquí",
 					items: [{ autogenerate: { directory: "Introduccion" } }],
+					collapsed: false,
 				},
 				{
 					label: "Proyectos",
 					items: [{ autogenerate: { directory: "proyectos" } }],
+					collapsed: true,
 				},
 				{
 					label: "Laboratorios",
 					items: [{ autogenerate: { directory: "laboratorios" } }],
+					collapsed: true,
 				},
+			],
+			social: [
+				{ icon: "github", label: "GitHub", href: "https://github.com/Pabloceda" },
+				{ icon: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/pablo-calderón-de-alba/" },
 			],
 			customCss: ["./src/styles/starlight-custom.css"],
 			// Disable Starlight's built-in 404 to use Cactus's

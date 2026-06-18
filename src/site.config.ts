@@ -42,8 +42,8 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Sobre mí",
 	},
 	{
-		path: "/#proyectos",
-		title: "Proyectos",
+		path: "/proyectos/",
+		title: "Wiki & Proyectos",
 	},
 	{
 		path: "/posts/",

@@ -3,6 +3,9 @@ title: Desarrollo del Portfolio
 description: Documentación sobre la creación de este sitio web híbrido con Astro, Cactus y Starlight.
 sidebar:
   order: 2
+  badge:
+    text: Nuevo
+    variant: success
 ---
 
 ## Introducción
