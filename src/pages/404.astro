@@ -2,12 +2,24 @@
 import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
-	description: "Oops! It looks like this page is lost in space!",
-	title: "Oops! You found a missing page!",
+	description: "404 - Sistema no encontrado",
+	title: "404 | Error Crítico",
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-12">404 | Oops something went wrong</h1>
-	<p class="mb-8">Please use the navigation to find your way back</p>
+	<div class="flex flex-col items-center justify-center min-h-[60vh] text-center">
+		<div class="text-accent text-6xl mb-6">
+			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+		</div>
+		<h1 class="title mb-4 text-3xl md:text-4xl font-mono text-accent-2">Error 404: Sistema no encontrado</h1>
+		<p class="mb-8 text-muted font-mono max-w-lg mx-auto text-sm leading-relaxed border border-accent/20 bg-accent/5 p-4 rounded-md">
+			> STATUS: FATAL_ERROR<br/>
+			> DESTINATION: OFFLINE<br/><br/>
+			El enlace al que intentas acceder parece estar caído o fuera de la red.
+		</p>
+		<a href="/" class="bg-accent text-[#1d1f21] hover:brightness-110 px-6 py-3 rounded-md font-bold transition-all hover:scale-105 flex items-center gap-2 shadow-[0_0_15px_rgba(42,188,137,0.3)]">
+			Volver al inicio (Safe Mode)
+		</a>
+	</div>
 </PageLayout>

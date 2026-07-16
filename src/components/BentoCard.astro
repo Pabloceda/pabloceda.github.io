@@ -14,21 +14,21 @@ const { name, description, href, cta, icon, class: className } = Astro.props;
 ---
 
 <div
-	class={`group relative flex flex-col justify-between overflow-hidden rounded-xl border border-accent/20 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)] bg-accent/5 backdrop-blur-sm dark:[box-shadow:0_-20px_80px_-20px_rgba(255,255,255,0.08)_inset] ${className || ""}`}
+	class={`group relative flex flex-col justify-between overflow-hidden rounded-xl border border-accent/20 hover:border-accent transition-all duration-150 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(42,188,137,0.15)] bg-accent/5 backdrop-blur-sm dark:[box-shadow:0_-20px_80px_-20px_rgba(255,255,255,0.08)_inset] ${className || ""}`}
 >
 	<!-- Capa de brillo interactiva siguiendo al cursor -->
-	<div class="glow-pointer pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+	<div class="glow-pointer pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-150 group-hover:opacity-100"></div>
 
 	<!-- Background animation wrapper (Para posibles fondos interactivos) -->
-	<div class="absolute inset-0 transition-transform duration-300 ease-out group-hover:scale-105">
+	<div class="absolute inset-0 transition-transform duration-150 ease-out group-hover:scale-105">
 		<slot name="background" />
 	</div>
 
 	<!-- Content (Sube en hover) -->
-	<div class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-4">
+	<div class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-150 group-hover:-translate-y-4">
 		<Icon
 			name={icon}
-			class="h-12 w-12 origin-left transform-gpu text-accent transition-all duration-300 ease-out group-hover:scale-75 group-hover:translate-y-1.5"
+			class="h-12 w-12 origin-left transform-gpu text-accent transition-all duration-150 ease-out group-hover:scale-75 group-hover:translate-y-1.5"
 		/>
 		<h3 class="text-lg font-semibold text-accent-2 mt-2">
 			{name}
@@ -40,15 +40,15 @@ const { name, description, href, cta, icon, class: className } = Astro.props;
 
 	<!-- CTA (Aparece y sube en hover) -->
 	<div
-		class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+		class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-150 group-hover:translate-y-0 group-hover:opacity-100"
 	>
 		<a
 			href={href}
-			class="pointer-events-auto bg-accent/10 hover:bg-accent/20 text-accent border border-accent/20 rounded-md px-3 py-1.5 text-xs font-semibold flex items-center gap-1.5 transition-all duration-300 hover:scale-105"
+			class="pointer-events-auto bg-accent/10 hover:bg-accent/20 text-accent border border-accent/20 rounded-md px-3 py-1.5 text-xs font-semibold flex items-center gap-1.5 transition-all duration-150 hover:scale-105"
 		>
 			{cta}
 			<svg
-				class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+				class="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-1"
 				fill="none"
 				stroke="currentColor"
 				stroke-width="2.5"
@@ -60,5 +60,5 @@ const { name, description, href, cta, icon, class: className } = Astro.props;
 	</div>
 
 	<!-- Capa de brillo ambiental de Magic UI -->
-	<div class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-accent/[0.02]"></div>
+	<div class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-150 group-hover:bg-accent/[0.02]"></div>
 </div>

@@ -380,17 +380,16 @@ const tools: SkillItem[] = [
 	<!-- ═══════════════════════════════════════════════ -->
 	<section class="mx-auto max-w-3xl scroll-mt-32 px-4 py-24 sm:px-8" id="proyectos">
 		<h2 class="title mb-4 text-xl reveal">Proyectos Destacados</h2>
-		<p class="text-muted mb-10 text-sm reveal" style="transition-delay: 150ms;">
+		<p class="text-muted mb-10 text-sm reveal">
 			Una selección de mis proyectos e implementaciones de sistemas más destacadas, con su respectiva documentación técnica detallada en Starlight.
 		</p>
 
 		<div class="space-y-6">
 			<!-- Proyecto: TFG -->
 			<article
-				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-150 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
 				onclick="window.location.href='/proyectos/tfg-fortificacion-pyme/'"
 				data-cursor="-pointer"
-				style="transition-delay: 200ms;"
 			>
 				<div class="relative z-10">
 					<div class="mb-2 flex flex-wrap items-center gap-2">
@@ -414,41 +413,11 @@ const tools: SkillItem[] = [
 				</div>
 			</article>
 
-			<!-- Proyecto: pfSense + Wazuh -->
-			<article
-				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
-				onclick="window.location.href='/laboratorios/pfsense-wazuh/'"
-				data-cursor="-pointer"
-				style="transition-delay: 300ms;"
-			>
-				<div class="relative z-10">
-					<div class="mb-2 flex flex-wrap items-center gap-2">
-						<h3 class="text-base font-semibold">
-							<a class="cactus-link" href="/laboratorios/pfsense-wazuh/">
-								Entorno de laboratorio del Proyecto Intermodular
-							</a>
-						</h3>
-						<span class="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
-							Completado
-						</span>
-					</div>
-					<p class="text-muted mb-3 text-sm">
-						Integración de un firewall pfSense con la plataforma SIEM Wazuh para recolectar logs de tráfico y monitorizar de manera activa servidores en la DMZ y equipos cliente en la red LAN.
-					</p>
-					<div class="flex flex-wrap gap-1.5">
-						{["Wazuh SIEM", "pfSense", "DMZ", "Docker Compose", "Log Monitoring"].map((tag) => (
-							<span class="bg-accent/10 text-accent rounded-md px-2 py-0.5 text-xs">{tag}</span>
-						))}
-					</div>
-				</div>
-			</article>
-
 			<!-- Proyecto: Portfolio -->
 			<article
-				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-150 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
 				onclick="window.location.href='/proyectos/desarrollo-portfolio/'"
 				data-cursor="-pointer"
-				style="transition-delay: 400ms;"
 			>
 				<div class="relative z-10">
 					<div class="mb-2 flex flex-wrap items-center gap-2">
@@ -466,6 +435,35 @@ const tools: SkillItem[] = [
 					</p>
 					<div class="flex flex-wrap gap-1.5">
 						{["Astro", "Starlight", "Tailwind CSS", "GitHub Pages"].map((tag) => (
+							<span class="bg-accent/10 text-accent rounded-md px-2 py-0.5 text-xs">{tag}</span>
+						))}
+					</div>
+				</div>
+			</article>
+
+
+			<!-- Laboratorio 1 -->
+			<article
+				class="reveal relative overflow-hidden border-accent/20 hover:border-accent group rounded-md border p-5 transition-all duration-150 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+				onclick="window.location.href='/laboratorios/pfsense-wazuh/'"
+				data-cursor="-pointer"
+			>
+				<div class="relative z-10">
+					<div class="mb-2 flex flex-wrap items-center gap-2">
+						<h3 class="text-base font-semibold">
+							<a class="cactus-link" href="/laboratorios/pfsense-wazuh/">
+								Laboratorio 1
+							</a>
+						</h3>
+						<span class="rounded-full bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-500">
+							Próximamente
+						</span>
+					</div>
+					<p class="text-muted mb-3 text-sm">
+						En este laboratorio aprenderás a integrar un firewall pfSense con la plataforma SIEM Wazuh para recolectar logs de tráfico y monitorizar de manera activa servidores en la DMZ y equipos cliente en la red LAN.
+					</p>
+					<div class="flex flex-wrap gap-1.5">
+						{["Wazuh SIEM", "pfSense", "DMZ", "Docker Compose", "Log Monitoring"].map((tag) => (
 							<span class="bg-accent/10 text-accent rounded-md px-2 py-0.5 text-xs">{tag}</span>
 						))}
 					</div>
@@ -603,8 +601,8 @@ const tools: SkillItem[] = [
 						{
 							opacity: 1,
 							y: 0,
-							duration: 0.8,
-							stagger: 0.15,
+							duration: 0.4,
+							stagger: 0.08,
 							ease: "power2.out",
 							overwrite: true
 						}

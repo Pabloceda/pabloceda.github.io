@@ -108,6 +108,25 @@
 	[data-astro-image="constrained"] {
 		max-width: 100%;
 	}
+
+	::selection {
+		background: var(--color-accent);
+		color: var(--color-global-bg);
+	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+	::-webkit-scrollbar-track {
+		background: var(--color-global-bg);
+	}
+	::-webkit-scrollbar-thumb {
+		background: var(--color-accent-2);
+		border-radius: 4px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--color-accent);
+	}
 }
 
 @layer components {
